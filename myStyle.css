@@ -1,0 +1,54 @@
+html {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+h1 {
+  margin-top: 0px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: #0c4;
+  text-shadow: -4px 8px #097,
+               -8px 16px #06a,
+               -12px 24px #03d,
+               -16px 32px #000;
+}
+
+
+button {
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  height: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 2px solid rgb(200 200 0 / 60%);
+  box-shadow: 1px 1px 2px rgb(0 0 200 / 40%);
+  border-radius: 10px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+td {
+  text-align: center;
+  font-size: 2rem;
+  word-wrap: break-word;
+}
+
+th {
+  text-align: center;
+  font-size: 2rem;
+  word-wrap: break-word;
+}
+
+output {
+  word-wrap: break-word;
+}
+
+#analysis {  
+  visibility: hidden;
+  td {
+    border:1px solid black;
+  }
+}

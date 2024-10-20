@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Color Quiz!</title>
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+
+<body>
+    <table id="main">
+        <tr>
+            <td colspan="5">
+                <h1>Color Quiz!</h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <h2>
+                    <output id="quizOut"> </output>
+                </h2>
+                <button id="next">Next</button>
+                <br><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="id1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <output id="output1"></output>
+            </td>
+            <td>
+                <output id="output2"></output>
+            </td>
+            <td>
+                <output id="output3"></output>
+            </td>
+            <td>
+                <output id="output4"></output>
+            </td>
+            <td>
+                <output id="output5"></output>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table id="analysis">
+        <tr>
+            <th>Color</th>
+            <th>Dist: 0-30</th>
+            <th>30-60</th>
+            <th>60-90</th>
+            <th>90-120</th>
+            <th>120-150</th>
+        </tr>
+    </table>
+</body>
+<script src="HTMLelements.js"></script> <!-- Last, connects defined functions to listeners  -->
+<script src="colorMap.js"></script>
+<script src="colorDist.js"></script>
+<script src="analysis.js"></script>
+<script src="game.js"></script>
+
+</html>
