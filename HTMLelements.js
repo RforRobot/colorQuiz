@@ -2,12 +2,14 @@
 const mainTable = document.getElementById('main');
 
 // index of colorRow in the table
-const colorRow = 2;
+const colorRow = 3;
 
 resizeCells();
 
-// Listener in game.js
+// Listeners in game.js
 const nextButton = document.getElementById('next');
+
+const gameTypeSelect = document.getElementById('gameType'); 
 
 const outs = document.getElementsByTagName('output');
 

@@ -40,9 +40,9 @@ function analyze() {
                 continue;
             }
 
-            var rowIndex = Math.floor(colorDistance / 30) + 1;
+            var rowIndex = Math.floor( colorDistance(color1,color2) / 30) + 1;
 
-           // console.log("i:" + i + ", j:" + j + ", rowIndex: " + rowIndex + ", colorDistance: " + colorDistance);
+           console.log("i:" + i + ", j:" + j + ", rowIndex: " + rowIndex + ", colorDistance: " + colorDistance(color1,color2));
 
             analysisTable.rows[i + 1].cells[rowIndex].innerHTML++;
 
