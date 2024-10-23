@@ -33,17 +33,15 @@ button {
 td {
   text-align: center;
   font-size: 2rem;
-  word-wrap: break-word;
 }
 
 th {
   text-align: center;
   font-size: 2rem;
-  word-wrap: break-word;
 }
 
 output {
-  word-wrap: break-word;
+  word-break: break-all;
 }
 
 #analysis {  
