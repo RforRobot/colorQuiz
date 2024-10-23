@@ -9,7 +9,7 @@ resizeCells();
 // Listeners in game.js
 const nextButton = document.getElementById('next');
 
-const gameTypeSelect = document.getElementById('gameType'); 
+const gameTypeSelect = document.getElementById('gameType');
 
 const outs = document.getElementsByTagName('output');
 
@@ -25,3 +25,4 @@ function resizeCells() {
     }
 
 }
+
