@@ -87,7 +87,8 @@ function displayNames() {
         var colorRGB = colorMap[fiveColors[i - 1]];
         var pseudoLightness = (colorRGB[0] + colorRGB[1] + colorRGB[2]) / 3;
 
-        if (pseudoLightness < 128) {
+        // arbitrary cutoff
+        if (pseudoLightness < 64) {
             outs[i].style = "color: white"
         } else {
             outs[i].style = "color: black"
