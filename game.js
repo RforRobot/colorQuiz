@@ -55,7 +55,7 @@ function getColors() {
         // push color if it is first OR (unique AND close to previous one)
         if (numCol < 1 || (fiveColors.indexOf(color) === -1) && colorDistance(color, fiveColors[numCol - 1]) < distanceLimit) {
             fiveColors.push(color);
-            console.log(colorDrawCounter);
+//            console.log(colorDrawCounter);
         }
 
         // break loop if 5 colors are done
@@ -101,7 +101,7 @@ function displayNames() {
 
 function displayRGBinfo() {
 
-    console.log("info displayed");
+//    console.log("info displayed");
 
     const RGBoutOffset = 5;
     const HSLoutOffset = 10;
@@ -125,7 +125,7 @@ function displayRGBinfo() {
 
 function hideNames() {
 
-    console.log("names hidden");
+//    console.log("names hidden");
 
     for (var i = 1; i < 16; i++) {
         outs[i].value = "";

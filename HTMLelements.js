@@ -6,7 +6,7 @@ const colorRow = 3;
 
 addSomeCells(3, 5)
 
-resizeCells();
+shapeColorRow();
 
 // Listeners in game.js
 const gameTypeSelect = document.getElementById('gameType');
@@ -19,13 +19,15 @@ const outs = document.getElementsByTagName('output');
 
 const nameOut = outs[0];
 
-function resizeCells() {
+function shapeColorRow() {
 
     var size = window.innerWidth / 6;
 
     for (var i = 0; i < 5; i++) {
-        mainTable.rows[colorRow].cells[i].setAttribute("width", size)
-        mainTable.rows[colorRow].cells[i].setAttribute("height", size)
+        var cell = mainTable.rows[colorRow].cells[i];
+
+        cell.setAttribute("width", size);
+        cell.setAttribute("height", size);
     }
 
 }
