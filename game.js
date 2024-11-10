@@ -1,10 +1,3 @@
-// Listener
-nextButton.addEventListener("click", advanceGameState);
-
-gameTypeSelect.addEventListener("input", changeGameType);
-
-infoSelect.addEventListener("input", changeInfoType);
-
 // 0 - reveal phase
 // 1 - game in progress
 var gameState = 1;
@@ -16,6 +9,7 @@ var distanceLimit = 60;
 var colorList = fullColorList;
 
 var displayInfo = infoSelect.value;
+
 
 function advanceGameState() {
     if (gameState == 1) {
@@ -34,68 +28,6 @@ function advanceGameState() {
         displayRGBinfo();
     }
 }
-
-function changeInfoType() {
-    displayInfo = infoSelect.value;
-}
-
-function changeGameType() {
-    var gameType = gameTypeSelect.value;
-    switch (gameType) {
-        case 'proxy':
-            colorList = fullColorList;
-            distanceLimit = 60;
-            break;
-        case 'red':
-            colorList = redList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'orange':
-            colorList = orangeList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'yellow':
-            colorList = yellowList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'green':
-            colorList = greenList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'cyan':
-            colorList = cyanList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'blue':
-            colorList = blueList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'pink':
-            colorList = pinkList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'white':
-            colorList = whileList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'purple':
-            colorList = purpleList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'gray':
-            colorList = grayList;
-            distanceLimit = 255 * 3;
-            break;
-        case 'brown':
-            colorList = brownList;
-            distanceLimit = 255 * 3;
-            break;
-        default:
-            console.log(`Invalid gametype ${gameType} given.`);
-    }
-}
-
-
 
 
 function getColors() {
@@ -151,6 +83,16 @@ function displayColors() {
 function displayNames() {
 
     for (var i = 1; i < 6; i++) {
+
+        var colorRGB = colorMap[fiveColors[i - 1]];
+        var pseudoLightness = (colorRGB[0] + colorRGB[1] + colorRGB[2]) / 3;
+
+        if (pseudoLightness < 128) {
+            outs[i].style = "color: white"
+        } else {
+            outs[i].style = "color: black"
+        }
+
         outs[i].value = fiveColors[i - 1];
     }
 
