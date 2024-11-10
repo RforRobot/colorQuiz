@@ -7,9 +7,11 @@ const colorRow = 3;
 resizeCells();
 
 // Listeners in game.js
+const gameTypeSelect = document.getElementById('gameType');
+
 const nextButton = document.getElementById('next');
 
-const gameTypeSelect = document.getElementById('gameType');
+const infoSelect = document.getElementById('RGBinfo');
 
 const outs = document.getElementsByTagName('output');
 

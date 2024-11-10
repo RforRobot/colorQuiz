@@ -16,31 +16,41 @@
         </tr>
         <tr>
             <td colspan="5">
+                Guess which color is:
                 <h2>
                     <output id="quizOut"> </output>
                 </h2>
             </td>
         </tr>
         <tr>
-            <td colspan="2"></td>
-            <td colspan="1">
-                <button id="next">Next</button>
-            </td>
+            <td colspan="1"></td>
             <td style="font-size: 1.5rem;">Choose mode of randomization:<br>
             
-            <select id="gameType">
-                <option value="proxy">Proximity</option>
-                <option value="blue">Hues of blue</option>
-                <option value="brown">Hues of brown</option>
-                <option value="cyan">Hues of cyan</option>
-                <option value="gray">Hues of gray</option>
-                <option value="green">Hues of green</option>
-                <option value="orange">Hues of orange</option>
-                <option value="pink">Hues of pink</option>
-                <option value="purple">Hues of purple</option>
-                <option value="red">Hues of red</option>
-                <option value="white">Hues of white</option>
-                <option value="yellow">Hues of yellow</option>
+                <select id="gameType">
+                    <option value="proxy">Proximity</option>
+                    <option value="blue">Hues of blue</option>
+                    <option value="brown">Hues of brown</option>
+                    <option value="cyan">Hues of cyan</option>
+                    <option value="gray">Hues of gray</option>
+                    <option value="green">Hues of green</option>
+                    <option value="orange">Hues of orange</option>
+                    <option value="pink">Hues of pink</option>
+                    <option value="purple">Hues of purple</option>
+                    <option value="red">Hues of red</option>
+                    <option value="white">Hues of white</option>
+                    <option value="yellow">Hues of yellow</option>
+                </select>    
+    
+            </td>
+            <td colspan="1">
+                <button id="next">Reveal names</button>
+            </td>
+            <td style="font-size: 1.5rem;">Display RGB and HSL info:<br>
+            
+            <select id="RGBinfo">
+                <option value="always">Always</option>
+                <option value="afterGuess">With name reveal</option>
+                <option value="never">Never</option>
             </select>    
 
         </td>
@@ -55,19 +65,53 @@
         </tr>
         <tr>
             <td>
-                <output id="output1"></output>
+                <output></output>
             </td>
             <td>
-                <output id="output2"></output>
+                <output></output>
             </td>
             <td>
-                <output id="output3"></output>
+                <output></output>
             </td>
             <td>
-                <output id="output4"></output>
+                <output></output>
             </td>
             <td>
-                <output id="output5"></output>
+                <output></output>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
+            </td>
+            <td>
+                <output></output>
             </td>
         </tr>
     </table>
@@ -87,6 +131,7 @@
 <script src="colorMap.js"></script>
 <script src="colorClusters.js"></script>
 <script src="colorDist.js"></script>
+<script src="RGBHSLconversion.js"></script>
 <script src="game.js"></script>
 <script src="analysis.js"></script>
 

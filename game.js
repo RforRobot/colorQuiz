@@ -3,6 +3,8 @@ nextButton.addEventListener("click", advanceGameState);
 
 gameTypeSelect.addEventListener("input", changeGameType);
 
+infoSelect.addEventListener("input", changeInfoType);
+
 // 0 - reveal phase
 // 1 - game in progress
 var gameState = 1;
@@ -13,17 +15,28 @@ var distanceLimit = 60;
 
 var colorList = fullColorList;
 
+var displayInfo = infoSelect.value;
+
 function advanceGameState() {
     if (gameState == 1) {
+        nextButton.innerText = "New color"
         displayNames();
         gameState = 0;
     } else if (gameState == 0) {
+        nextButton.innerText = "Reveal names"
         getColors();
         gameState = 1;
     } else {
         console.log("Unkown gameState:" + gameState);
     }
 
+    if (displayInfo == "always" || (displayInfo == "afterGuess" && gameState == 0)) {
+        displayRGBinfo();
+    }
+}
+
+function changeInfoType() {
+    displayInfo = infoSelect.value;
 }
 
 function changeGameType() {
@@ -102,7 +115,7 @@ function getColors() {
             colorDrawCounter = 0;
         }
 
-        var index = Math.floor(Math.random() * colorList.length-1 + 1);
+        var index = Math.floor(Math.random() * colorList.length - 1 + 1);
         var color = colorList[index];
 
         var numCol = fiveColors.length;
@@ -143,9 +156,35 @@ function displayNames() {
 
 }
 
+function displayRGBinfo() {
+
+    console.log("info displayed");
+
+    const RGBoutOffset = 5;
+    const HSLoutOffset = 10;
+    for (var i = 1; i < 6; i++) {
+
+        var color = fiveColors[i - 1];
+
+        outs[i + RGBoutOffset].value = "("
+            + colorMap[color][0] + ","
+            + colorMap[color][1] + ","
+            + colorMap[color][2] + ")";
+
+        var hsl = RGB2HSL(colorMap[color]);
+        outs[i + HSLoutOffset].value =
+            "H:" + Math.round(hsl.h) +
+            " S:" + Math.round(hsl.s) +
+            " L:" + Math.round(hsl.l);
+    }
+
+}
+
 function hideNames() {
 
-    for (var i = 1; i < 6; i++) {
+    console.log("names hidden");
+
+    for (var i = 1; i < 16; i++) {
         outs[i].value = "";
     }
 
