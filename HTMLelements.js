@@ -4,6 +4,8 @@ const mainTable = document.getElementById('main');
 // index of colorRow in the table
 const colorRow = 3;
 
+addSomeCells(3, 5)
+
 resizeCells();
 
 // Listeners in game.js

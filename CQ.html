@@ -18,14 +18,14 @@
             <td colspan="5">
                 Guess which color is:
                 <h2>
-                    <output id="quizOut"> </output>
+                    <output> </output>
                 </h2>
             </td>
         </tr>
         <tr>
-            <td colspan="1"></td>
+            <td></td>
             <td style="font-size: 1.5rem;">Choose mode of randomization:<br>
-            
+
                 <select id="gameType">
                     <option value="proxy">Proximity</option>
                     <option value="blue">Hues of blue</option>
@@ -39,80 +39,21 @@
                     <option value="red">Hues of red</option>
                     <option value="white">Hues of white</option>
                     <option value="yellow">Hues of yellow</option>
-                </select>    
-    
+                </select>
+
             </td>
             <td colspan="1">
                 <button id="next">Reveal names</button>
             </td>
             <td style="font-size: 1.5rem;">Display RGB and HSL info:<br>
-            
-            <select id="RGBinfo">
-                <option value="always">Always</option>
-                <option value="afterGuess">With name reveal</option>
-                <option value="never">Never</option>
-            </select>    
 
-        </td>
+                <select id="RGBinfo">
+                    <option value="always">Always</option>
+                    <option value="afterGuess">With name reveal</option>
+                    <option value="never">Never</option>
+                </select>
+            </td>
             <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
-            <td>
-                <output></output>
-            </td>
         </tr>
     </table>
     <br>
@@ -127,7 +68,8 @@
         </tr>
     </table>
 </body>
-<script src="HTMLelements.js"></script> <!-- Last, connects defined functions to listeners  -->
+<script src="HTMLcreation.js"></script>
+<script src="HTMLelements.js"></script>
 <script src="colorMap.js"></script>
 <script src="colorClusters.js"></script>
 <script src="colorDist.js"></script>
