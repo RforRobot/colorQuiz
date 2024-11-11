@@ -50,6 +50,8 @@ function displayInfo() {
     if (document.getElementById("hslCheck").checked) {
         displayHSLs();
     }
+
+    contrastAdjustment();
 }
 
 function displayColors() {
@@ -61,28 +63,11 @@ function displayColors() {
 function displayColorNames() {
 
     for (var i = 0; i < numColors; i++) {
-
-        var colorRGB = colorMap[fiveColors[i]];
-        var pseudoLightness = (colorRGB[0] + colorRGB[1] + colorRGB[2]) / 3;
-
-        var fontColor;
-        var cutoff = 64;
-        // When background color varies, black font might not be readable. 64 is an arbitrary cutoff
-        if (pseudoLightness < cutoff && document.getElementById("colorCheck").checked) {
-            for (var j = 0; j < 3; j++) {
-                outs[1 + i * 3 + j].style = "color: white"
-            }
-        } else {
-            for (var j = 0; j < 3; j++) {
-                outs[1 + i * 3 + j].style = "color: black"
-            }
-        }
-
         outs[1 + i * 3].value = fiveColors[i];
     }
 
-    for(e of document.getElementsByClassName("nameDiv")) {
-        e.style["visibility"]="visible"
+    for (e of document.getElementsByClassName("nameDiv")) {
+        e.style["visibility"] = "visible"
     }
 }
 
@@ -96,8 +81,8 @@ function displayRGBs() {
             + colorMap[color][2];
     }
 
-    for(e of document.getElementsByClassName("rgbDiv")) {
-        e.style["visibility"]="visible"
+    for (e of document.getElementsByClassName("rgbDiv")) {
+        e.style["visibility"] = "visible"
     }
 }
 
@@ -112,11 +97,30 @@ function displayHSLs() {
             ", " + Math.round(hsl.l);
     }
 
-    for(e of document.getElementsByClassName("hslDiv")) {
-        e.style["visibility"]="visible"
+    for (e of document.getElementsByClassName("hslDiv")) {
+        e.style["visibility"] = "visible"
     }
 }
 
+function contrastAdjustment() {
+
+    for (var i = 0; i < numColors; i++) {
+        var colorRGB = colorMap[fiveColors[i]];
+        var pseudoLightness = (colorRGB[0] + colorRGB[1] + colorRGB[2]) / 3;
+
+        var cutoff = 64;
+        // When background color varies, black font might not be readable. 64 is an arbitrary cutoff
+        if (pseudoLightness < cutoff && document.getElementById("colorCheck").checked) {
+            for (var j = 0; j < 3; j++) {
+                outs[1 + i * 3 + j].style = "color: white"
+            }
+        } else {
+            for (var j = 0; j < 3; j++) {
+                outs[1 + i * 3 + j].style = "color: black"
+            }
+        }
+    }
+}
 
 function displaySolution() {
     switch (hintSelect.value) {
