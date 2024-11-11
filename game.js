@@ -23,13 +23,12 @@ function advanceGameState() {
     } else {
         console.log("Unkown gameState:" + gameState);
     }
-    
+        
+    hideInfo();
     displayInfo();
 }
 
 function getColors() {
-
-    hideInfo();
 
     fiveColors = [];
 

@@ -123,6 +123,9 @@ function contrastAdjustment() {
 }
 
 function displaySolution() {
+
+//    console.log("displaySolution called");
+
     switch (hintSelect.value) {
         case 'name':
             displayColorNames();
@@ -143,7 +146,7 @@ function displaySolution() {
 
 function hideInfo() {
 
-    //    console.log("info hidden/cleared");
+   // console.log("info hidden/cleared");
 
     for (var i = 0; i < numColors; i++) {
 
@@ -172,4 +175,7 @@ function hideInfo() {
         }
     }
 
+    if (gameState == 0) {
+        displaySolution();
+    }
 }

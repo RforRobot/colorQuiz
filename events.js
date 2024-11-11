@@ -8,16 +8,15 @@ gameTypeSelect.addEventListener("input", changeGameType);
 
 
 for (checkbox of checkBoxes) {
-    checkbox.addEventListener("input", boxCheckHandler);
+    checkbox.addEventListener("input", checkBoxHandler);
 }
 
-function boxCheckHandler() {
+function checkBoxHandler() {
+    
     hideInfo();
 
-    // solution may be hidden by checking
-    if (gameState == 0) {
-        displaySolution();
-    }
+//    console.log("checkBoxHandler called in gamestate " + gameState);
+
 }
 
 function changeHintInfo() {
