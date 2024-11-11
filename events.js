@@ -2,12 +2,41 @@
 nextButton.addEventListener("click", advanceGameState);
 // function in game.js
 
+hintSelect.addEventListener("input", changeHintInfo);
+
 gameTypeSelect.addEventListener("input", changeGameType);
 
-infoSelect.addEventListener("input", changeInfoType);
 
-function changeInfoType() {
-    displayInfo = infoSelect.value;
+for (checkbox of checkBoxes) {
+    checkbox.addEventListener("input", boxCheckHandler);
+}
+
+function boxCheckHandler() {
+    hideInfo();
+
+    // solution may be hidden by checking
+    if (gameState == 0) {
+        displaySolution();
+    }
+}
+
+function changeHintInfo() {
+    document.getElementById("hintOutDiv").style['backgroundColor'] = 'gray';
+    hintOut.innerHTML = "&nbsp";
+    displayHint();
+
+    for (checkbox of document.querySelectorAll('input[type=checkbox]')) {
+        checkbox.addEventListener("input", hideInfo);
+    }
+
+    for (checkbox of checkBoxes) {
+        checkbox.disabled = false;
+    }
+
+    document.getElementById(hintSelect.value + "Check").checked = false;
+    document.getElementById(hintSelect.value + "Check").disabled = true;
+
+    hideInfo();
 }
 
 function changeGameType() {
