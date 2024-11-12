@@ -13,7 +13,7 @@ for (checkbox of checkBoxes) {
 
 function checkBoxHandler() {
     
-    hideInfo();
+    hideOrShowInfo();
 
 //    console.log("checkBoxHandler called in gamestate " + gameState);
 
@@ -25,7 +25,7 @@ function changeHintInfo() {
     displayHint();
 
     for (checkbox of document.querySelectorAll('input[type=checkbox]')) {
-        checkbox.addEventListener("input", hideInfo);
+        checkbox.addEventListener("input", hideOrShowInfo);
     }
 
     for (checkbox of checkBoxes) {
@@ -35,7 +35,7 @@ function changeHintInfo() {
     document.getElementById(hintSelect.value + "Check").checked = false;
     document.getElementById(hintSelect.value + "Check").disabled = true;
 
-    hideInfo();
+    hideOrShowInfo();
 }
 
 function changeGameType() {

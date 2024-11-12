@@ -124,7 +124,7 @@ function contrastAdjustment() {
 
 function displaySolution() {
 
-//    console.log("displaySolution called");
+    //    console.log("displaySolution called");
 
     switch (hintSelect.value) {
         case 'name':
@@ -144,36 +144,43 @@ function displaySolution() {
     }
 }
 
-function hideInfo() {
+function hideOrShowInfo() {
 
-   // console.log("info hidden/cleared");
+    // console.log("info hidden/cleared");
 
-    for (var i = 0; i < numColors; i++) {
 
-        if (!document.getElementById("colorCheck").checked) {
+    if (!document.getElementById("colorCheck").checked) {
+        for (var i = 0; i < numColors; i++) {
             mainTable.rows[colorRow].cells[i + 1].setAttribute("style", "background-color:" + 'lightgray');
-        } else {
-            displayColors();
         }
-
-        if (!document.getElementById("nameCheck").checked) {
-            document.getElementsByClassName("nameDiv")[i].style['visibility'] = "hidden";
-        } else {
-            document.getElementsByClassName("nameDiv")[i].style['visibility'] = "visible";
-        }
-
-        if (!document.getElementById("rgbCheck").checked) {
-            document.getElementsByClassName("rgbDiv")[i].style['visibility'] = "hidden";
-        } else {
-            document.getElementsByClassName("rgbDiv")[i].style['visibility'] = "visible";
-        }
-
-        if (!document.getElementById("hslCheck").checked) {
-            document.getElementsByClassName("hslDiv")[i].style['visibility'] = "hidden";
-        } else {
-            document.getElementsByClassName("hslDiv")[i].style['visibility'] = "visible";
-        }
+    } else {
+        displayColors();
     }
+
+    if (!document.getElementById("nameCheck").checked) {
+        for (var i = 0; i < numColors; i++) {
+            document.getElementsByClassName("nameDiv")[i].style['visibility'] = "hidden";
+        }
+    } else {
+        displayColorNames();
+    }
+
+    if (!document.getElementById("rgbCheck").checked) {
+        for (var i = 0; i < numColors; i++) {
+            document.getElementsByClassName("rgbDiv")[i].style['visibility'] = "hidden";
+        }
+    } else {
+        displayRGBs();
+    }
+
+    if (!document.getElementById("hslCheck").checked) {
+        for (var i = 0; i < numColors; i++) {
+            document.getElementsByClassName("hslDiv")[i].style['visibility'] = "hidden";
+        }
+    } else {
+        displayHSLs();
+    }
+
 
     if (gameState == 0) {
         displaySolution();

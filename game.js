@@ -13,18 +13,18 @@ var colorList = fullColorList;
 function advanceGameState() {
         
     if (gameState == 1) {
-        nextButton.innerText = "New color"
         displaySolution();
         gameState = 0;
+        nextButton.innerText = "New color"
     } else if (gameState == 0) {
-        nextButton.innerText = "Reveal solution"
         getColors();
         gameState = 1;
+        nextButton.innerText = "Reveal solution"
     } else {
         console.log("Unkown gameState:" + gameState);
     }
         
-    hideInfo();
+    hideOrShowInfo();
     displayInfo();
 }
 
