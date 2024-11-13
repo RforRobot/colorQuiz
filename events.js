@@ -74,7 +74,7 @@ function changeGameType() {
             distanceLimit = 255 * 3;
             break;
         case 'white':
-            colorList = whileList;
+            colorList = whiteList;
             distanceLimit = 255 * 3;
             break;
         case 'purple':
