@@ -6,6 +6,8 @@ hintSelect.addEventListener("input", changeHintInfo);
 
 gameTypeSelect.addEventListener("input", changeGameType);
 
+document.addEventListener("keydown",keyEventHandler);
+
 
 for (checkbox of checkBoxes) {
     checkbox.addEventListener("input", checkBoxHandler);
@@ -36,6 +38,15 @@ function changeHintInfo() {
     document.getElementById(hintSelect.value + "Check").disabled = true;
 
     hideOrShowInfo();
+}
+
+
+function keyEventHandler(event) {
+    console.log("Event.code is: " + event.code);
+        const callback = {
+            "KeyN" : advanceGameState
+        }[event.code];
+        callback?.();
 }
 
 function changeGameType() {
