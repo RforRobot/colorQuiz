@@ -40,9 +40,7 @@ function getColors() {
 
         //  we tried drawing a lot of times and cannot seem to find a close color; let us restart
         if (colorDrawCounter > 999) {
-            console.log("Could not find color close to " +
-                fiveColors[fiveColors.length - 1] +
-                " starting again.");
+            //  console.log("Could not find color close to " + fiveColors[fiveColors.length - 1] + " starting again.");
 
             colorDrawCounter = 0;
             fiveColors = [];
@@ -56,16 +54,18 @@ function getColors() {
 
         // push color if it is first OR (unique AND close to previous one)
         if (numCol < 1 ||
-            ((fiveColors.indexOf(color) === -1)
+            (fiveColors.indexOf(color) === -1
                 && colorDistance(color, fiveColors[numCol - 1]) < distanceLimit)) {
             console.log(`Color ${color} accepted`);
             fiveColors.push(color);
         }
 
+        numCol = fiveColors.length;
+
         // break loop if 5 colors are done
         if (numCol == numColors) {
             gettingColors = false;
-        }
+        } 
         colorDrawCounter++;
 
         const tryLimit = 100;
@@ -75,6 +75,7 @@ function getColors() {
             console.log("fiveColors:" + fiveColors + ", distance limit:" + distanceLimit);
             break;
         }
+
     }
 
     var index = Math.floor(Math.random() * numColors);
@@ -84,5 +85,5 @@ function getColors() {
     displayHint();
 }
 
-getColors();
+// getColors();
 advanceGameState();
