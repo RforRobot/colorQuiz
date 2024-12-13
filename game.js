@@ -6,12 +6,12 @@ var fiveColors = [];
 
 var secretColor;
 
-var distanceLimit = 60;
+var distanceLimit = 20;
 
 var colorList = fullColorList;
 
 function advanceGameState() {
-        
+
     if (gameState == 1) {
         displaySolution();
         gameState = 0;
@@ -23,7 +23,7 @@ function advanceGameState() {
     } else {
         console.log("Unkown gameState:" + gameState);
     }
-        
+
     hideOrShowInfo();
     displayInfo();
 }
@@ -34,13 +34,19 @@ function getColors() {
 
     var gettingColors = true;
     var colorDrawCounter = 0;
+    var tryCounter = 0;
 
     while (gettingColors) {
 
         //  we tried drawing a lot of times and cannot seem to find a close color; let us restart
         if (colorDrawCounter > 999) {
-            fiveColors = [];
+            console.log("Could not find color close to " +
+                fiveColors[fiveColors.length - 1] +
+                " starting again.");
+
             colorDrawCounter = 0;
+            fiveColors = [];
+            tryCounter++;
         }
 
         var index = Math.floor(Math.random() * colorList.length - 1 + 1);
@@ -49,9 +55,11 @@ function getColors() {
         var numCol = fiveColors.length;
 
         // push color if it is first OR (unique AND close to previous one)
-        if (numCol < 1 || (fiveColors.indexOf(color) === -1) && colorDistance(color, fiveColors[numCol - 1]) < distanceLimit) {
+        if (numCol < 1 ||
+            ((fiveColors.indexOf(color) === -1)
+                && colorDistance(color, fiveColors[numCol - 1]) < distanceLimit)) {
+            console.log(`Color ${color} accepted`);
             fiveColors.push(color);
-            //            console.log(colorDrawCounter);
         }
 
         // break loop if 5 colors are done
@@ -59,6 +67,14 @@ function getColors() {
             gettingColors = false;
         }
         colorDrawCounter++;
+
+        const tryLimit = 100;
+
+        if (tryCounter > tryLimit) {
+            console.log("Could not draw five close colors in more than " + tryLimit + " tries, something is wrong!");
+            console.log("fiveColors:" + fiveColors + ", distance limit:" + distanceLimit);
+            break;
+        }
     }
 
     var index = Math.floor(Math.random() * numColors);

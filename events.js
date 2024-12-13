@@ -103,4 +103,12 @@ function changeGameType() {
         default:
             console.log(`Invalid gametype ${gameType} given.`);
     }
+
+    // Get new colors after switch:
+
+    advanceGameState();
+    // previous advance may have moved to reveal
+    if (gameState == 0) {
+        advanceGameState();
+    }
 }

@@ -22,7 +22,7 @@ function addHintSelect() {
 function addGameTypeSelect() {
     document.getElementById('gameTypeDiv').innerHTML =
         '<select id="gameType">' +
-        '<option value="proxy">Proximity</option>' +
+        '<option value="proxy">Hue Proximity</option>' +
         '<option value="blue">Hues of blue</option>' +
         '<option value="brown">Hues of brown</option>' +
         '<option value="cyan">Hues of cyan</option>' +

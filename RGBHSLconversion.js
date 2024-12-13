@@ -6,6 +6,8 @@ function RGB2HSL(RGBobject) {
     var g = RGBobject[1];
     var b = RGBobject[2];
 
+    // console.log("r:" + r, "g:" + g, "g:" + g);
+
     // Normalize the RGB values to the range 0-1
     r /= 255;
     g /= 255;
@@ -45,7 +47,7 @@ function RGB2HSL(RGBobject) {
         h /= 6; // Normalize to [0, 1]
     }
 
-//    console.log("h:" + h*360, "s:" + s*100, "l:" + l*100);
+    // console.log("h:" + h*360, "s:" + s*100, "l:" + l*100);
 
     // Convert hue to degrees and saturation/lightness to percentages
     return {
