@@ -56,7 +56,7 @@ function getColors() {
         if (numCol < 1 ||
             (fiveColors.indexOf(color) === -1
                 && colorDistance(color, fiveColors[numCol - 1]) < distanceLimit)) {
-            console.log(`Color ${color} accepted`);
+            // console.log(`Color ${color} accepted`);
             fiveColors.push(color);
         }
 
